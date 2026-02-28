@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Arizona Staff — Официальный сайт</title>
+  <style>
+    :root{
+      --bg:#0b140f; /* Темно-зеленый оттенок под стиль авы */
+      --card: rgba(255,255,255,.08);
+      --text:#eaf2ff;
+      --muted: rgba(234,242,255,.72);
+      --border: rgba(255,255,255,.18);
+      --accent: #ff3d6a; /* Розовый из логотипа */
+      --accent2:#2ce6a3; /* Зеленый из логотипа */
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background: radial-gradient(1000px 600px at 70% 10%, rgba(44,230,163,.15), transparent 55%),
+                  radial-gradient(900px 700px at 10% 30%, rgba(255,61,106,.12), transparent 55%),
+                  var(--bg);
+      overflow-x:hidden;
+    }
+    .hero-bg{
+      position:fixed; inset:0; z-index:-2;
+      background: linear-gradient(180deg, rgba(0,0,0,.75) 0%, rgba(11,15,20,.95) 100%),
+                  url("bg.jpg") center/cover no-repeat;
+    }
+    .wrap{ width:min(1120px, 92vw); margin: 0 auto; padding: 22px 0 60px; }
+    
+    /* НАВБАР С АВАТАРКОЙ */
+    .nav{
+      position:sticky; top:12px; z-index:50;
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--border); border-radius: 999px; padding: 8px 20px;
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .nav-avatar {
+        width: 40px; height: 40px; 
+        border-radius: 50%; 
+        border: 2px solid var(--accent);
+        object-fit: cover;
+    }
+
+    .btn{
+      border:1px solid var(--border); background: rgba(255,255,255,.06);
+      color:var(--text); font-weight:800; padding: 10px 18px;
+      border-radius: 999px; text-decoration:none; transition: .18s ease;
+      display:inline-flex; align-items:center; gap:8px; cursor: pointer;
+    }
+    .btn.primary{ border:none; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #fff; }
+    .btn:hover{ transform: translateY(-2px); background: rgba(255,255,255,0.1); }
+    
+    .hero{ padding: 60px 0 40px; text-align:center; }
+    h1{ margin: 20px 0; font-size: clamp(28px, 5vw, 56px); text-transform: uppercase; line-height: 1.1; letter-spacing: 1px;}
+    .subtitle{ max-width: 800px; margin: 0 auto 30px; font-size: clamp(16px, 2vw, 19px); color: var(--muted); line-height: 1.6; }
+
+    .grid{ display:grid; grid-template-columns: repeat(12, 1fr); gap: 15px; margin-top: 30px; }
+    
+    /* КАРТОЧКИ В РАМОЧКАХ */
+    .card{
+      grid-column: span 6; padding: 24px; 
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--border); 
+      border-radius: var(--radius); 
+      backdrop-filter: blur(10px);
+      transition: 0.3s;
+    }
+    .card:hover { border-color: var(--accent); background: rgba(255,255,255,.06); }
+
+    .pillrow{ display:flex; gap:10px; flex-wrap:wrap; margin-top:15px; justify-content: center; }
+    .pill{
+      padding: 10px 18px; border-radius: 999px; background: rgba(0,0,0,0.3);
+      border: 1px solid var(--border); color: var(--text); font-weight: 700; 
+      text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 8px;
+    }
+    .pill:hover{ border-color: var(--accent2); background: rgba(255,255,255,0.05); }
+
+    .copy-btn{ 
+        background: var(--accent); border: none; color: #fff; 
+        padding: 6px 12px; border-radius: 8px; cursor: pointer; 
+        font-weight: bold; margin-left: 10px; transition: 0.2s;
+    }
+    .copy-btn:active { transform: scale(0.9); }
+
+    @media (max-width: 768px){ .card{ grid-column: span 12; } }
+  </style>
+</head>
+<body>
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <header class="nav">
+      <div class="brand">
+        <img src="logo.jpg" alt="Logo" class="nav-avatar">
+        <b>ARIZONA STAFF</b>
+      </div>
+      <div class="actions">
+        <a class="btn primary" href="samp://5.39.108.53:1369">Начать игру</a>
+      </div>
+    </header>
+
+    <main class="hero">
+      <h1>Официальный сайт проекта Arizona Staff</h1>
+      <p class="subtitle">Arizona Staff - Лучший проект , много игроков, можно подать заявку на лидера и через 3 дня ты уже админ! У нас много вего заходи и играй!</p>
+
+      <div class="pillrow">
+        <a class="btn primary" href="https://t.me/arizonastaffroleplay" target="_blank">🤖 Официальный Бот</a>
+        <a class="btn" href="https://t.me/arizonastaffsupportBot" target="_blank">⛔ Тех. поддержка</a>
+      </div>
+
+      <section class="grid">
+        <div class="card">
+          <h3>🎮 Наш сервер</h3>
+          <p>Скопируй адрес и заходи в игру:</p>
+          <div class="pill">
+            <code id="ipAddr">5.39.108.53:1369</code>
+            <button class="copy-btn" onclick="copyIp()">Копировать</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>📱 Мы в соц. сетях</h3>
+          <div class="pillrow">
+            <a class="pill" href="https://www.tiktok.com/@hyperbonuscrmp?_r=1&_t=ZS-93mH1r2qyto" target="_blank">🎵 TikTok</a>
+            <a class="pill" href="https://youtube.com/@arizonastaff?si=CF-t2ahALjK6SHRQ" target="_blank">📺 YouTube</a>
+            <a class="pill" href="https://t.me/arizonastaffroleplay" target="_blank">📢 Telegram</a>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin-top: 50px; text-align: left;">
+        <h2 style="text-align: center;">💎 О проекте</h2>
+        <div class="card" style="width: 100%; border-left: 4px solid var(--accent);">
+           <p style="font-size: 18px; line-height: 1.7;">
+             Arizona Staff — это уникальное игровое пространство. У нас ты найдешь отзывчивую администрацию, стабильный онлайн и уникальные системы. <br><br>
+             <b>Почему мы?</b><br>
+             • Подача заявки на лидерку в пару кликов.<br>
+             • Возможность стать админом всего за 3 дня.<br>
+             • Постоянные бонусы и ивенты для игроков.
+           </p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function copyIp() {
+      const ip = "5.39.108.53:1369";
+      navigator.clipboard.writeText(ip).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.textContent = "Скопировано!";
+        btn.style.background = "#2ce6a3";
+        setTimeout(() => {
+            btn.textContent = "Копировать";
+            btn.style.background = "#ff3d6a";
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
